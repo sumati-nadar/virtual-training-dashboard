@@ -51,40 +51,40 @@
           </a>
         </div>
         <ul class="nav">
-          <li>
+          <li class="active">
             <a href="./dashboard.html">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="./icons.html">
+            <a href="./courses.html">
               <i class="tim-icons icon-atom"></i>
-              <p>Icons</p>
+              <p>Courses</p>
             </a>
           </li>
           <li>
             <a href="./map.html">
               <i class="tim-icons icon-pin"></i>
-              <p>Maps</p>
+              <p>Resources</p>
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
+            <a href="./leader.html">
               <i class="tim-icons icon-bell-55"></i>
-              <p>Notifications</p>
+              <p>LeaderBoard</p>
             </a>
           </li>
-          <li class="active ">
+          <li>
             <a href="./user.html">
               <i class="tim-icons icon-single-02"></i>
-              <p>User Profile</p>
+              <p>Chat</p>
             </a>
           </li>
           <li>
             <a href="./tables.html">
               <i class="tim-icons icon-puzzle-10"></i>
-              <p>Table List</p>
+              <p>Settings</p>
             </a>
           </li>
           <li>
@@ -93,12 +93,7 @@
               <p>Typography</p>
             </a>
           </li>
-          <li>
-            <a href="./rtl.html">
-              <i class="tim-icons icon-world"></i>
-              <p>RTL Support</p>
-            </a>
-          </li>
+          
           <li class="active-pro">
             <a href="./upgrade.html">
               <i class="tim-icons icon-spaceship"></i>
@@ -188,26 +183,21 @@
       <div class="content">
         <div class="row">
           <div class="col-md-8">
-            <div class="card">
+            <div class="card" >
               <div class="card-header">
                 <h5 class="title">Edit Profile</h5>
               </div>
               <div class="card-body">
                 <form>
                   <div class="row">
-                    <div class="col-md-5 pr-md-1">
+                    <div class="col-md-6 pr-md-1">
                       <div class="form-group">
-                        <label>Company (disabled)</label>
-                        <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                        <label>Company Name</label>
+                        <input type="text" class="form-control" disabled="" placeholder="Company" value="Ernst & Young Global Limited">
                       </div>
                     </div>
-                    <div class="col-md-3 px-md-1">
-                      <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control" placeholder="Username" value="michael23">
-                      </div>
-                    </div>
-                    <div class="col-md-4 pl-md-1">
+                    
+                    <div class="col-md-6 pl-md-1">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" placeholder="mike@email.com">
@@ -285,7 +275,7 @@
                       <h5 class="title">Mike Andrew</h5>
                     </a>
                     <p class="description">
-                      Ceo/Co-Founder
+                      Associate Engineer
                     </p>
                   </div>
                 </p>
@@ -293,7 +283,7 @@
                   Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
                 </div>
               </div>
-              <div class="card-footer">
+             <!--  <div class="card-footer">
                 <div class="button-container">
                   <button href="javascript:void(0)" class="btn btn-icon btn-round btn-facebook">
                     <i class="fab fa-facebook"></i>
@@ -306,35 +296,19 @@
                   </button>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
       <footer class="footer">
         <div class="container-fluid">
-          <ul class="nav">
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-                Creative Tim
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-                About Us
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-                Blog
-              </a>
-            </li>
-          </ul>
+          
           <div class="copyright">
             ©
             <script>
               document.write(new Date().getFullYear())
-            </script>2018 made with <i class="tim-icons icon-heart-2"></i> by
-            <a href="javascript:void(0)" target="_blank">Creative Tim</a> for a better web.
+            </script>
+            <a href="javascript:void(0)" target="_blank">VPT Platform</a>
           </div>
         </div>
       </footer>
@@ -350,7 +324,7 @@
         <li class="adjustments-line">
           <a href="javascript:void(0)" class="switch-trigger background-color">
             <div class="badge-colors text-center">
-              <span class="badge filter badge-primary active" data-color="primary"></span>
+              <span class="badge filter badge-primary active" data-color="blue"></span>
               <span class="badge filter badge-info" data-color="blue"></span>
               <span class="badge filter badge-success" data-color="green"></span>
             </div>
@@ -411,7 +385,11 @@
         window_width = $(window).width();
 
         fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
+        new_color = "blue"
+        $sidebar.attr('data', new_color);
+        $main_panel.attr('data', new_color);
+        $full_page.attr('filter-color', new_color);
+        $sidebar_responsive.attr('data', new_color);
 
 
         $('.fixed-plugin a').click(function(event) {
