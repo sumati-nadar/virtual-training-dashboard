@@ -51,13 +51,13 @@
           </a>
         </div>
         <ul class="nav">
-          <li>
+          <li >
             <a href="./dashboard.html">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="./courses.html">
               <i class="tim-icons icon-atom"></i>
               <p>Courses</p>
@@ -70,18 +70,24 @@
             </a>
           </li>
           <li>
-            <a href="./leader.html">
+            <a href="./leaderboard.html">
               <i class="tim-icons icon-bell-55"></i>
               <p>LeaderBoard</p>
             </a>
           </li>
-          <li  class="active">
+          <li>
             <a href="./user.html">
               <i class="tim-icons icon-single-02"></i>
-              <p>Profile</p>
+              <p>Chat</p>
             </a>
           </li>
-          
+          <li>
+            <a href="./tables.html">
+              <i class="tim-icons icon-puzzle-10"></i>
+              <p>Settings</p>
+            </a>
+          </li>
+         
         </ul>
       </div>
     </div>
@@ -97,7 +103,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">User Profile</a>
+            <a class="navbar-brand" id="course_name" href="javascript:void(0)">Table List</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -141,7 +147,7 @@
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a></li>
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a></li>
                   <li class="dropdown-divider"></li>
-                  <li class="nav-link"><a href="login.html" class="nav-item dropdown-item">Log out</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a></li>
                 </ul>
               </li>
               <li class="separator d-lg-none"></li>
@@ -164,127 +170,22 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="row">
-          <div class="col-md-8">
-            <div class="card" >
-              <div class="card-header">
-                <h5 class="title">Edit Profile</h5>
-              </div>
-              <div class="card-body">
-                <form>
-                  <div class="row">
-                    <div class="col-md-6 pr-md-1">
-                      <div class="form-group">
-                        <label>Company Name</label>
-                        <input type="text" class="form-control" disabled="" placeholder="Company" value="Ernst & Young Global Limited">
-                      </div>
-                    </div>
-                    
-                    <div class="col-md-6 pl-md-1">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" placeholder="mike@email.com">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 pr-md-1">
-                      <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" class="form-control" placeholder="Company" value="Mike">
-                      </div>
-                    </div>
-                    <div class="col-md-6 pl-md-1">
-                      <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Address</label>
-                        <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4 pr-md-1">
-                      <div class="form-group">
-                        <label>City</label>
-                        <input type="text" class="form-control" placeholder="City" value="Mike">
-                      </div>
-                    </div>
-                    <div class="col-md-4 px-md-1">
-                      <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" class="form-control" placeholder="Country" value="Andrew">
-                      </div>
-                    </div>
-                    <div class="col-md-4 pl-md-1">
-                      <div class="form-group">
-                        <label>Postal Code</label>
-                        <input type="number" class="form-control" placeholder="ZIP Code">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-8">
-                      <div class="form-group">
-                        <label>About Me</label>
-                        <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="card-footer">
-                <button type="submit" class="btn btn-fill btn-primary">Save</button>
-              </div>
+          <div class="col-md-12">
+            
+            <div id='custom-course-card'>
+              <!-- add custom template -->
             </div>
+           
+
+
+
           </div>
-          <div class="col-md-4">
-            <div class="card card-user">
-              <div class="card-body">
-                <p class="card-text">
-                  <div class="author">
-                    <div class="block block-one"></div>
-                    <div class="block block-two"></div>
-                    <div class="block block-three"></div>
-                    <div class="block block-four"></div>
-                    <a href="javascript:void(0)">
-                      <img class="avatar" src="../assets/img/emilyz.jpg" alt="...">
-                      <h5 class="title">Mike Andrew</h5>
-                    </a>
-                    <p class="description">
-                      Associate Engineer
-                    </p>
-                  </div>
-                </p>
-                <div class="card-description">
-                  Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                </div>
-              </div>
-             <!--  <div class="card-footer">
-                <div class="button-container">
-                  <button href="javascript:void(0)" class="btn btn-icon btn-round btn-facebook">
-                    <i class="fab fa-facebook"></i>
-                  </button>
-                  <button href="javascript:void(0)" class="btn btn-icon btn-round btn-twitter">
-                    <i class="fab fa-twitter"></i>
-                  </button>
-                  <button href="javascript:void(0)" class="btn btn-icon btn-round btn-google">
-                    <i class="fab fa-google-plus"></i>
-                  </button>
-                </div>
-              </div>
-            </div> -->
-          </div>
+          
         </div>
       </div>
       <footer class="footer">
         <div class="container-fluid">
-          
+        
           <div class="copyright">
             ©
             <script>
@@ -296,15 +197,26 @@
       </footer>
     </div>
   </div>
+ 
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"> -->
+
+
 
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!-- <script src="../assets/js/black-dashboard.min.js"></script> -->
+
+
+    
   <!--  Google Maps Plugin    -->
   <!-- Place this tag in your head or just before your close body tag. -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
   <!-- Chart JS -->
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
@@ -312,9 +224,18 @@
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+  <script src="../assets/demo/individual_course.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/jquery.dataTables.min.css">
+  <script type="text/javascript" src="../assets/js/plugins/jquery.dataTables.min.js"></script>
+
   <script>
+
     $(document).ready(function() {
+
       $().ready(function() {
+
         $sidebar = $('.sidebar');
         $navbar = $('.navbar');
         $main_panel = $('.main-panel');
@@ -329,14 +250,39 @@
 
         fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
-        // new_color = "blue"
-        // $sidebar.attr('data', new_color);
-        // $main_panel.attr('data', new_color);
-        // $full_page.attr('filter-color', new_color);
-        // $sidebar_responsive.attr('data', new_color);
+        url_string = window.location.href
+        console.log(url_string)
+        var url = new URL(url_string);
+        var course_id = url.searchParams.get("id");
+        console.log(course_id);
 
+        // data = {
+        //   'index': 1,
+        //   'title': 'Introduction',
+        //   'details':"Machine learning is the science of getting computers to act without being explicitly programmed. In the past decade, machine learning has given us self-driving cars, practical speech recognition, effective web search, and a vastly improved understanding of the human genome. Machine learning is so pervasive today that you probably use it dozens of times a day without knowing it. Many researchers also think it is the best way to make progress towards human-level AI. In this class, you will learn about the most effective machine learning techniques, and gain practice implementing them and getting them to work for yourself. More importantly, you'll learn about not only the theoretical underpinnings of learning, but also gain the practical know-how needed to quickly and powerfully apply these techniques to new problems. Finally, you'll learn about some of Silicon Valley's best practices in innovation as it pertains to machine learning and AI.",
+        //   'hours': 3
+        // }
+
+        // result = [data, data, data, data];
+
+        // var i;
+        // for (i=0 , i<10, i++) {
+
+          // createTemplate(data);
+          // addCards(result)
+          getIndividualCourses(course_id)
+
+        // }
+
+
+
+
+
+
+        // getCourses()
 
         $('.fixed-plugin a').click(function(event) {
+
           if ($(this).hasClass('switch-trigger')) {
             if (event.stopPropagation) {
               event.stopPropagation();

@@ -22,77 +22,68 @@ function getCourses() {
 
 		console.log("sumati-----------------------")
 
-	$("#leaderboard_list_table_detailed tbody").empty();
+		$("#leaderboard_list_table_detailed tbody").empty();
 
-	// $("#leaderboard_list_table_detailed").DataTable({
- //            	// "columns": [1, 2,3,4,5,6,7,8,9,2,1],
- //            	"data": [[1, 2,3,4]]
- //            })
+		// $("#leaderboard_list_table_detailed").DataTable({
+	 //            	// "columns": [1, 2,3,4,5,6,7,8,9,2,1],
+	 //            	"data": [[1, 2,3,4]]
+	 //            })
 
-	// var mytable = $("#leaderboard_list_table_detailed").DataTable();
+		// var mytable = $("#leaderboard_list_table_detailed").DataTable();
 
-	// mytable.clear().draw();
+		// mytable.clear().draw();
 
-	// mytable.row.add([1,2,3,3]);
-	// mytable.draw();
+		// mytable.row.add([1,2,3,3]);
+		// mytable.draw();
 
-	$.ajax({
-        url: 'http://13.235.34.180:8800/courses/',
-        type: 'GET',
-        // dataType: 'json',
-        contentType: 'application/json',
-        // headers: {
-        //      "Authorization": "Basic "+window.btoa(email + ':' + password),
-        // },
-        // data : JSON.stringify({
-        //      // "username": name,
-        //      "password": password,
-        //      // "name": name,
-        //      "email": email
-        // }),
-        
-        success: function (result) {
+		$.ajax({
+	        url: 'http://13.235.34.180:8800/courses/',
+	        type: 'GET',
+	        // dataType: 'json',
+	        contentType: 'application/json',
+	        // headers: {
+	        //      "Authorization": "Basic "+window.btoa(email + ':' + password),
+	        // },
+	        // data : JSON.stringify({
+	        //      // "username": name,
+	        //      "password": password,
+	        //      // "name": name,
+	        //      "email": email
+	        // }),
+	        
+	        success: function (result) {
 
-            console.log(result.course_details)
-            console.log(getColumns(result.course_details[0]))
+	            console.log(result.course_details)
+	            console.log(getColumns(result.course_details[0]))
 
-            alert("Success")
+	            // alert("Success")
 
-            populateCourses(result.course_details)
+	            populateCourses(result.course_details)
 
-            
-
-            // $("#leaderboard_list_table_detailed").DataTable({
-            // 	"columns": [1, 2,3,4,5,6,7,8,9,2,1],
-            // 	"data": [[1,33,3,3]]
-            // })
-            // window.location.href = "dashboard.html";
+	            demo.showNotification('top','center', 'Success!')
 
 
+	        },
+	        error: function (error) {
+
+	            console.log(error);
+	            // alert("error")
+
+	            if(error.status === 406)
+	            {
+	                // alert("Please Enter Correct AccessToken Or Refresh Your AccessToken");
+	                demo.showNotification('top','center', error.responseJSON.message)
+	            }
+
+	        }
+
+	    });
 
 
+	}catch(err){
 
-        },
-        error: function (error) {
-
-            console.log(error);
-            // alert("error")
-
-            if(error.status === 406)
-            {
-                // alert("Please Enter Correct AccessToken Or Refresh Your AccessToken");
-                demo.showNotification('top','center', error.responseJSON.message)
-            }
-
-        }
-
-    } );
-
-
-}catch(err){
-
-	console.log(err)
-}
+		console.log(err)
+	}
 
 }
 
@@ -109,9 +100,10 @@ function populateCourses(data){
 		var arr = new Array();
 
 		arr.push(data[i].course_name)
-		arr.push(data[i].course_description)
+		arr.push(data[i].course_level.toUpperCase())
 		arr.push(data[i].credits)
-		arr.push("<div class='col1d'><button class='editBut' onclick='notifications.html'>View</button></div>")
+		arr.push(data[i].rating)
+		arr.push("<div class='col1d'><a class='btn btn-fill btn-primary' href='individual_course.html?id="+data[i].course_id+"'>Get Course</a></div>")
 		// arr.push(data[i].prerequisites)
 		// arr.push(data[i].duration)
 		farr.push(arr)
@@ -121,7 +113,10 @@ function populateCourses(data){
 
 	$("#leaderboard_list_table_detailed").DataTable({
     	// "columns": getColumns(result.course_details),
-    	"data": farr
+    	"data": farr,
+    	"searching" : false,
+    	dom: 'ifrt',
+    	"bInfo" : false,
     })
 
 

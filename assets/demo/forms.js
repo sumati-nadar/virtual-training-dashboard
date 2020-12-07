@@ -74,6 +74,8 @@ function loginForm(){
 		type: 'POST',
 		dataType: 'json',
         contentType: 'application/json',
+        // xhrFields: { withCredentials: true },
+        // crossDomain: true,
         headers: {
         	 "Authorization": "Basic "+window.btoa(email + ':' + password),
         },
@@ -92,6 +94,8 @@ function loginForm(){
 
 			window.location.href = "dashboard.html";
 
+			// console.log(document.cookie)
+
 
 
         },
@@ -100,15 +104,15 @@ function loginForm(){
         	console.log(error);
         	// alert("error")
 
-        	if(error.status === 406)
-        	{
+        	// if(error.status === 406)
+        	// {
         		// alert("Please Enter Correct AccessToken Or Refresh Your AccessToken");
         		demo.showNotification('top','center', error.responseJSON.message)
-        	}
+        	// }
 
         }
 
-    } );
+     });
 
 
 }
