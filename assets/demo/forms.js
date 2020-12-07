@@ -8,9 +8,25 @@ function registerForm(){
 
 	console.log(conceptName)
 
+	if (name == "" || name.includes(" ") == false){
+		demo.showNotification('top','center', "Enter full name")
+		return
+	}
+
+	if (email == ""){
+		demo.showNotification('top','center', "Enter valid email id")
+		return
+	}
+
+	if (password == "" || cpass == ""){
+		demo.showNotification('top','center', "Enter valid password")
+		return
+	}
+
 	if (password != cpass) {
 		// alert("password doesnot match")
 		demo.showNotification('top','center', "password doesnot match")
+		return
 	}
 
 	$.ajax({
@@ -19,7 +35,7 @@ function registerForm(){
 		dataType: 'json',
         contentType: 'application/json',
 		data : JSON.stringify({
-		  	"username": name,
+		  	"username": name.split(" ")[0],
 		  	"password": password,
 		  	"name": name,
 		  	"email": email
@@ -91,6 +107,8 @@ function loginForm(){
 			console.log(result)
 
 			// alert("Success")
+
+			localStorage.setItem("email_id", result.email_id)
 
 			window.location.href = "dashboard.html";
 
