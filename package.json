@@ -1,7 +1,7 @@
 {
   "name": "black-dashboard",
   "version": "1.0.0",
-  "description": "Black Dasboard, a Black Desgin. Coded by Creative Tim",
+  "description": "Black Dasboard, a Black Desgin. Coded by VPT Platform",
   "main": "index.html",
   "directories": {
     "example": "root"
@@ -31,7 +31,7 @@
     "frontend",
     "responsive bootstrap dashboard"
   ],
-  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
+  "author": "VPT Platform <hello@creative-tim.com> (https://www.creative-tim.com/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/creativetimofficial/black-dashboard/issues"
