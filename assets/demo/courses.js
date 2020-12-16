@@ -37,7 +37,7 @@ function getCourses() {
 		// mytable.draw();
 
 		$.ajax({
-	        url: 'http://13.235.34.180:8800/courses/',
+	        url: 'https://uat.algo360.com:8800/courses/',
 	        type: 'GET',
 	        // dataType: 'json',
 	        contentType: 'application/json',
@@ -60,7 +60,7 @@ function getCourses() {
 
 	            populateCourses(result.course_details)
 
-	            demo.showNotification('top','center', 'Success!')
+	            demo.showNotification('top','center', 'Courses For You!')
 
 
 	        },
@@ -119,5 +119,47 @@ function populateCourses(data){
     	"bInfo" : false,
     })
 
+
+}
+
+
+function mentorCourse(){
+
+	var farr = new Array();
+	for (var i = 0; i < localStorage.length; i++){
+    // if (localStorage.getItem(localStorage.key(i)))
+
+    
+
+    if (localStorage.key(i).includes("COURSE_")){
+
+    	var arr = new Array();
+
+    	data = JSON.parse(localStorage.getItem(localStorage.key(i)))
+    	console.log(data)
+    	console.log(localStorage.key(i))
+    	course_id = localStorage.key(i).split("_")[1]
+
+    	arr.push(data.course_name)
+		arr.push(data.course_cat)
+		arr.push("<div class='col1d'><a class='btn btn-fill btn-primary' href='load_course.html?id="+course_id+"'>View Course</a></div>")
+		farr.push(arr)
+    }
+
+    
+
+    console.log(arr)
+
+	}
+
+	console.log(farr)
+
+    $("#leaderboard_list_table_detailed").DataTable({
+    	// "columns": getColumns(result.course_details),
+    	"data": farr,
+    	"searching" : false,
+    	dom: 'ifrt',
+    	"bInfo" : false,
+    })
 
 }

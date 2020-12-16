@@ -82,22 +82,9 @@ function getIndividualCourses(course_id) {
 
 		console.log("sumati-----------------------")
 
-	// $("#leaderboard_list_table_detailed tbody").empty();
-
-	// $("#leaderboard_list_table_detailed").DataTable({
- //            	// "columns": [1, 2,3,4,5,6,7,8,9,2,1],
- //            	"data": [[1, 2,3,4]]
- //            })
-
-	// var mytable = $("#leaderboard_list_table_detailed").DataTable();
-
-	// mytable.clear().draw();
-
-	// mytable.row.add([1,2,3,3]);
-	// mytable.draw();
 
 	$.ajax({
-        url: 'http://13.235.34.180:8800/courses/'+course_id,
+        url: 'https://uat.algo360.com:8800/courses/'+course_id,
         type: 'GET',
         dataType: 'json',
         contentType: 'application/json',
@@ -122,7 +109,7 @@ function getIndividualCourses(course_id) {
             addCards(result['course_details'])
 
             document.getElementById('course_name').innerText = result['course_details'][0]['course_name']
-            demo.showNotification('top','center', 'Success')
+            // demo.showNotification('top','center', 'Success')
 
         },
         error: function (error) {

@@ -5,7 +5,7 @@ function fetchLeader() {
 		console.log("sumati- profile----------------------"+localStorage.getItem("email_id"))
 
 		$.ajax({
-	        url: 'http://13.235.34.180:8800/employee/leaderboard',
+	        url: 'https://uat.algo360.com:8800/employee/leaderboard',
 	        type: 'GET',
 	        // dataType: 'json',
 	        contentType: 'application/json',
@@ -29,7 +29,7 @@ function fetchLeader() {
 	            // populateCourses(result.course_details)
 
 
-	            demo.showNotification('top','center', 'Success!')
+	            // demo.showNotification('top','center', 'Success!')
 
 
 	        },

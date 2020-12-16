@@ -7,7 +7,7 @@ function fetchProfile() {
 		console.log("sumati- profile----------------------"+localStorage.getItem("email_id"))
 
 		$.ajax({
-	        url: 'http://13.235.34.180:8800/employee/'+localStorage.getItem("email_id"),
+	        url: 'https://uat.algo360.com:8800/employee/'+localStorage.getItem("email_id"),
 	        type: 'GET',
 	        // dataType: 'json',
 	        contentType: 'application/json',
@@ -38,7 +38,7 @@ function fetchProfile() {
 	            document.getElementById('full_name').innerHTML = result.employee_details.name.toUpperCase()
 
 
-	            demo.showNotification('top','center', 'Success!')
+	            // demo.showNotification('top','center', 'Success!')
 
 
 	        },
@@ -73,7 +73,7 @@ function updateProfile() {
 		console.log("sumati- profile----------------------"+document.getElementById('qualifications').value)
 
 		$.ajax({
-	        url: 'http://13.235.34.180:8800/employee/details',
+	        url: 'https://uat.algo360.com:8800/employee/details',
 	        type: 'PUT',
 	        // dataType: 'json',
 	        contentType: 'application/json',

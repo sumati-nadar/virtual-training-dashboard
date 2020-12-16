@@ -30,7 +30,7 @@ function registerForm(){
 	}
 
 	$.ajax({
-		url: 'http://13.235.34.180:8800/auth/register/'+conceptName,
+		url: 'https://uat.algo360.com:8800/auth/register/'+conceptName,
 		type: 'POST',
 		dataType: 'json',
         contentType: 'application/json',
@@ -86,12 +86,12 @@ function loginForm(){
 	// }
 
 	$.ajax({
-		url: 'http://13.235.34.180:8800/auth/login',
+		url: 'https://uat.algo360.com:8800/auth/login',
 		type: 'POST',
 		dataType: 'json',
         contentType: 'application/json',
-        // xhrFields: { withCredentials: true },
-        // crossDomain: true,
+        xhrFields: { withCredentials: true },
+        crossDomain: true,
         headers: {
         	 "Authorization": "Basic "+window.btoa(email + ':' + password),
         },
@@ -110,7 +110,14 @@ function loginForm(){
 
 			localStorage.setItem("email_id", result.email_id)
 
-			window.location.href = "dashboard.html";
+			if (result.email_id.includes("mentor")){
+				window.location.href = "../mentor/courses.html";
+			}else{
+				window.location.href = "dashboard.html";
+			}
+
+
+			
 
 			// console.log(document.cookie)
 

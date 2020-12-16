@@ -43,13 +43,13 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="active">
-            <a href="./icons.html">
+          <li>
+            <a href="./courses.html">
               <i class="tim-icons icon-atom"></i>
               <p>Courses</p>
             </a>
           </li>
-          <li>
+          <li  class="active">
             <a href="./resources.html">
               <i class="tim-icons icon-pin"></i>
               <p>Resources</p>
@@ -62,11 +62,12 @@
             </a>
           </li>
           <li>
-            <a href="./user.html>">
+            <a href="./user.html">
               <i class="tim-icons icon-single-02"></i>
               <p>Profile</p>
             </a>
           </li>
+
 
         </ul>
       </div>
@@ -83,7 +84,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">My Courses</a>
+            <a class="navbar-brand" href="javascript:void(0)">LeaderBoard</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -97,7 +98,7 @@
                   <span class="d-lg-none d-md-block">Search</span>
                 </button>
               </li>
-              <li class="dropdown nav-item">
+               <li class="dropdown nav-item">
                 <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="notification d-none d-lg-block d-xl-block"></div>
                   <i class="tim-icons icon-sound-wave"></i>
@@ -106,11 +107,10 @@
                   </p>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
-                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">Mike John responded to your email</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">You have 5 more tasks</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Your friend Michael is in town</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Another notification</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Another one</a></li>
+                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">Machine learning course uploaded!</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Hey, you didn;t complete Python-Basics course</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Go check this out! May be this interests you! Data Structures</a></li>
+                  
                 </ul>
               </li>
               <li class="dropdown nav-item">
@@ -153,31 +153,43 @@
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header">
-                <h4 class="card-title">My Courses</h4>
+                <h4 class="card-title">LeaderBoard</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                    <table id="leaderboard_list_table_detailed" class="table table-striped">
-                        <thead class=" text-primary">
-                            <tr>
-                                <th align="center" id="name_row" name="name_row">Course Name</th>
-                                <th align="center" id="account_row" name="account_row">Level</th>
-                                <th align="center" id="account_row" name="account_row">Credits</th>
-                                <th align="center" id="account_row" name="account_row">Rating</th>
-                                <th align="center" id="account_row" name="account_row">Action</th>
-                                <!--  <th align="center" id="account_row" name="account_row">Score</th>
-                                <th align="center" id="account_row" name="account_row">Score</th> -->
+                  <table class="table tablesorter " id="">
+                    <thead class=" text-primary">
+                      <tr>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Score
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
 
-                                <!-- <th align="center" id="account_row" name="account_row">Score</th> -->
+                      <tr>
+                        <td>
+                          Jon Porter
+                        </td>
+                        <td>
+                          79
+                        </td>
+                      </tr>
 
-                            </tr>
-                        </thead>
-                        <tbody>
+                      <tr>
+                        <td>
+                          Jon Porter
+                        </td>
+                        <td>
+                          39
+                        </td>
+                      </tr>
 
-                        </tbody>
-
-                    </table>
-
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -200,25 +212,14 @@
     </div>
   </div>
 
-
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"> -->
-
-
-
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!-- <script src="../assets/js/black-dashboard.min.js"></script> -->
-
-
-
   <!--  Google Maps Plugin    -->
   <!-- Place this tag in your head or just before your close body tag. -->
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
@@ -226,18 +227,9 @@
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
-  <script src="../assets/demo/courses.js"></script>
-
-
-  <link rel="stylesheet" type="text/css" href="../assets/css/jquery.dataTables.min.css">
-  <script type="text/javascript" src="../assets/js/plugins/jquery.dataTables.min.js"></script>
-
   <script>
-
     $(document).ready(function() {
-
       $().ready(function() {
-
         $sidebar = $('.sidebar');
         $navbar = $('.navbar');
         $main_panel = $('.main-panel');
@@ -252,10 +244,9 @@
 
         fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
-        getCourses()
+
 
         $('.fixed-plugin a').click(function(event) {
-
           if ($(this).hasClass('switch-trigger')) {
             if (event.stopPropagation) {
               event.stopPropagation();

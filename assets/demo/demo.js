@@ -182,9 +182,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
-            padding: 20,
+            suggestedMin: 1,
+            suggestedMax: 5,
+            padding: 1,
             fontColor: "#9a9a9a"
           }
         }],
@@ -327,9 +327,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 120,
-            padding: 20,
+            suggestedMin: 1,
+            suggestedMax: 5,
+            padding: 1,
             fontColor: "#9e9e9e"
           }
         }],
@@ -358,9 +358,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
       datasets: [{
-        label: "Data",
+        label: "Hours",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#d048b6',
@@ -374,7 +374,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80],
+        data: [2, 4, 3, 4, 3, 4],
       }]
     };
 
@@ -394,9 +394,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
+      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
       datasets: [{
-        label: "My First dataset",
+        label: "Score",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#00d6b4',
@@ -410,7 +410,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [90, 27, 60, 12, 80],
+        data: [90, 27, 60, 12, 80, 30],
       }]
     };
 
@@ -439,7 +439,7 @@ demo = {
       data: {
         labels: chart_labels,
         datasets: [{
-          label: "My First dataset",
+          label: "Count",
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: '#d346b1',
@@ -498,9 +498,9 @@ demo = {
         display: false
       },
       data: {
-        labels: ['USA', 'GER', 'AUS', 'UK', 'RO', 'BR'],
+        labels: ['PYTH', 'SS', 'ML', 'DS', 'GR', 'JAVA'],
         datasets: [{
-          label: "Countries",
+          label: "Categories",
           fill: true,
           backgroundColor: gradientStroke,
           hoverBackgroundColor: gradientStroke,
@@ -508,7 +508,7 @@ demo = {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [53, 20, 10, 80, 100, 45],
+          data: [2, 4, 3, 6, 5, 5],
         }]
       },
       options: gradientBarChartConfiguration

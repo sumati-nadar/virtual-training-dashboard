@@ -1,4 +1,4 @@
-baseURL = "http://13.235.34.180:8800"
+baseURL = "https://uat.algo360.com:8800"
 
 
 function callAPi(url, method, data){
