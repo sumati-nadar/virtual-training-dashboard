@@ -4,26 +4,37 @@ function updatePPT() {
 
 	try{
 
-		let formData = new FormData();           
+		var formData = new FormData();           
     	formData.append("file", document.getElementById('ppt').files[0]);
     	course_name = document.getElementById('course_name').value
-    	formData.append("course_name", course_name);
+    	formData.append("assignment_name", "course_name");
     	// formData.append("course_name", document.getElementById('course_name').value);
     	var conceptName = $('#category').find(":selected").text();
-    	formData.append("course_category", conceptName);
-    	formData.append("course_description", "description");
-    	formData.append("duration", 2);
-    	formData.append("credits", 50);
+    	formData.append("course_category", "conceptName");
+    	formData.append("course_id", 1);
+    	formData.append("assignment_description", "description");
+    	formData.append("duration_hrs", 2);
+    	formData.append("assignment_credits", 50);
     	formData.append("pre_requisites", ["s", "s", "s"]);
  
 
-		console.log("sumati:profile---------------------- resourses");
+		console.log("sumati:profile---------------------- resourses" +formData.values());
+		for (var value of formData.values()) {
+		   console.log(value);
+		}
 
 		$.ajax({
 	        url: 'https://uat.algo360.com:8800/course/assignment/upload',
 	        type: 'POST',
 	        // dataType: 'json',
+	        xhrFields: { withCredentials: true },
+        	crossDomain: true,
+	        headers: {
+			    "accept": "application/json",
+			    "Content-Type": "multipart/form-data"
+			},
 	        contentType: 'application/json',
+	        // mimeType: "multipart/form-data",
 	        // headers: {
 	        //      "Authorization": "Basic "+window.btoa(email + ':' + password),
 	        // },
