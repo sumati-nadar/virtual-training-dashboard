@@ -37,7 +37,7 @@ function getCourses() {
 		// mytable.draw();
 
 		$.ajax({
-	        url: 'https://uat.algo360.com:8800/courses/',
+	        url: 'https://uat.algo360.com:8800/course/',
 	        type: 'GET',
 	        // dataType: 'json',
 	        contentType: 'application/json',

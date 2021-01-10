@@ -45,7 +45,7 @@ function createTemplate(data, index){
 		' hours to complete</i>',
 		'</div></div>',
 		'<div class="col-md-2" style="border-width: 1px;">',
-		'<a href="load_course.html">',
+		'<a href="load_course.html?aid='+index+'">',
 		'<i class="fas fa-eye fa-2x" style="color: #e44cc4;vertical-align: middle;"></i>',
 		'<p style="color: #e44cc4;">Watch</p></a>',
 		'</div></div></div></div></div>',
@@ -69,6 +69,10 @@ function addCards(result){
 
 	for (i=0; i <result.length; i++){
 		console.log(i)
+		console.log(result[i].material)
+
+		localStorage.setItem("ASSIGN"+(i+1), result[i].material)
+
 		card_template = card_template + createTemplate(result[i], i+1)
 	}
 
@@ -84,7 +88,7 @@ function getIndividualCourses(course_id) {
 
 
 	$.ajax({
-        url: 'https://uat.algo360.com:8800/courses/'+course_id,
+        url: 'https://uat.algo360.com:8800/course/'+course_id,
         type: 'GET',
         dataType: 'json',
         contentType: 'application/json',
@@ -104,7 +108,6 @@ function getIndividualCourses(course_id) {
             // console.log(getColumns(result.course_details[0]))
 
             // alert("Success")
-            
 
             addCards(result['course_details'])
 

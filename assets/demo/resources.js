@@ -11,12 +11,16 @@ function updatePPT() {
     	// formData.append("course_name", document.getElementById('course_name').value);
     	var conceptName = $('#category').find(":selected").text();
     	formData.append("course_category", conceptName);
+    	formData.append("course_description", "description");
+    	formData.append("duration", 2);
+    	formData.append("credits", 50);
+    	formData.append("pre_requisites", ["s", "s", "s"]);
  
 
-		console.log("sumati- profile---------------------- resourses");
+		console.log("sumati:profile---------------------- resourses");
 
 		$.ajax({
-	        url: 'https://uat.algo360.com:8800/courses/upload',
+	        url: 'https://uat.algo360.com:8800/course/assignment/upload',
 	        type: 'POST',
 	        // dataType: 'json',
 	        contentType: 'application/json',
